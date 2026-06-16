@@ -18,8 +18,3 @@ if st.button("Submit"):
     response = model.generate_content(prompt)
     st.write(response.text)
 
-
-
-API_KEY = st.secrets["GEMINI_API_KEY"]
-
-genai.configure(api_key=API_KEY)
