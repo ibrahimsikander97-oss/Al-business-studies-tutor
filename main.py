@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
-API_KEY = "AQ.Ab8RN6KqEtc4OOMdBvAShYAFi1hEZ8FkErGcFh8R4bu2jGSiNg"
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-2.5-flash")
@@ -17,3 +17,9 @@ if st.button("Submit"):
 
     response = model.generate_content(prompt)
     st.write(response.text)
+
+
+
+API_KEY = st.secrets["GEMINI_API_KEY"]
+
+genai.configure(api_key=API_KEY)
